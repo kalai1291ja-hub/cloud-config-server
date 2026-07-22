@@ -11,3 +11,5 @@ eureka.instance.instance-id=${spring.application.name}:${server.port}
 microservice.payment-service.endpoints.endpoint.uri:http://payment-service/payment/doPayment
 
 microservice.order-service.endpoints.endpoint.uri:http://order-service/order/orderId
+
+payment.service.url=http://payment-service/payment

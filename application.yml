@@ -1,15 +1,25 @@
-# Eureka Server
-eureka.client.service-url.defaultZone=http://localhost:8761/eureka/
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+    register-with-eureka: true
+    fetch-registry: true
 
-#Register with Eureka
-eureka.client.register-with-eureka=true
-eureka.client.fetch-registry=true
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${server.port}
 
-eureka.instance.prefer-ip-address=true
-eureka.instance.instance-id=${spring.application.name}:${server.port}
+microservice:
+  payment-service:
+    endpoints:
+      endpoint:
+        uri: http://payment-service/payment/doPayment
 
-microservice.payment-service.endpoints.endpoint.uri:http://payment-service/payment/doPayment
+  order-service:
+    endpoints:
+      endpoint:
+        uri: http://order-service/order/orderId
 
-microservice.order-service.endpoints.endpoint.uri:http://order-service/order/orderId
-
-payment.service.url=http://payment-service/payment
+payment:
+  service:
+    url: http://payment-service/payment

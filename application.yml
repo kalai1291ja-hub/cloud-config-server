@@ -18,7 +18,7 @@ microservice:
   order-service:
     endpoints:
       endpoint:
-        uri: http://order-service/order/orderId
+        uri: http://order-service/order/bookOrders
 
 payment:
   service:
